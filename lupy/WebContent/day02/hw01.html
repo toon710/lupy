@@ -16,15 +16,35 @@
 	var b = prompt('정수를 입력하시오 : ');
 	var c = prompt('정수를 입력하시오 : ');
 	
-	if(a > b){
-		if(a > c){
-			max = a;
-		} elst if(b){
-			max = c;
-		}
-	} else if(a < b){
-		if()
+	if(a > b && a > c){
+		max = a;
+	} else if(b > c){
+		max = b;
+	} else{
+		max = c;
 	}
+	document.write('<h3>제일 큰수는 : ' + max + ' 입니다. </h3>');
+	
+	if((a > b && a < c) || (a > c && a < b)){
+		mid = a;
+	} else if((b > a && b < c) || (b > c && b < a)){
+		mid = b;
+	} else{
+		mid = c;
+	}
+	document.write('<h3>가운데수는 : ' + mid + ' 입니다. </h3>');
+	
+	if(a < b && a < c){
+		min = a;
+	} else if(b < c){
+		min = b;
+	} else{
+		min = c;
+	}	
+	document.write('<h3>제일 작은수는 : ' + min + ' 입니다. </h3>');
+	
+	
+	
 </script>
 </head>
 <body>
