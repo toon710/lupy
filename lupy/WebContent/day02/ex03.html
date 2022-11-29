@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript">
+/* 
+	두개의 정수를 입력받아서
+	두 수들을 밑변, 높이라 가정하고
+	삼각형의 면적을 구해주는 프로그램을 작성하세요.
+	
+	실행예 ]
+		밑변 : XXX
+		높이 : ***
+		면적 : ****.**
+	
+	참고 ]
+		삼각형 면적 = 밑변 * 높이 / 2
+		
+		사각형 면적 = 가로 * 세로
+		
+		원의 면적 = 반지름 * 반지름 * 3.14
+		원의 둘레 = 2 * 반지름 * 3.14
+*/
+	var a = prompt('밑변을 입력하시오');
+	var h = prompt('높이를 입력하시오');
+	var r = prompt('반지름을 입력하시오');
+		
+	document.write('<h3>밑변 : ' + a + '</h3>');
+	document.write('<h3>높이 : ' + h + '</h3>');
+	document.write('<h3>삼각형면적 : ' + a * h / 2 + '</h3>');
+	document.write('<h3>사각형면적 : ' + a * h + '</h>');
+	document.write('<h3>원의 면적 : ' + r * r * 3.14 + '</h>');
+	document.write('<h3>원의 둘레 : ' + 2 * r * 3.14 + '</h>');
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

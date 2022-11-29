@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+	실수(소수점이 있는 숫자)를 입력받아서
+	소수점 이하 세째자리에서 반올림한 숫자를 출력하세요.
+	연산자와 parseInt()만 사용해서 처리하세요.
+*/
+	/* var num = prompt('실수를 입력하시오');
+	var num2 = parseInt(num * 1000);
+	var num3 = parseInt(num * 100) * 10;
+	var num4 = num2 - num3;
+	var result = parseInt(num * 100);
+	(num4 >= 5) ? ++result : result;
+	document.write('<h1>입력값 : ' + num + '입니다.<h1>');
+	document.write('<h1>결과값 : ' + result/100 + '입니다.</h1>'); */
+	
+	var sno = prompt('실수 입력 : ');
+//	var no = 3.1415;
+	var no = parseFloat(sno);
+	var tmp = no;
+	tmp = tmp + 0.005;
+	tmp = tmp * 100;
+	tmp = parseInt(tmp); // 정수로 변환. --> 소수점 이하 버림
+	tmp = tmp / 100
+	
+	alert(no + ' | ' + tmp);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

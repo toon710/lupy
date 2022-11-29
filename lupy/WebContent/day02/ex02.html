@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+	산술 연산자 연습문제
+	
+	76572 원을 지불하려고 한다.
+	필요한 화폐단위가 몇개씩인진 계산해서 출력하세요.
+	
+	참고 ]
+		화폐단위
+			50000, 10000, 5000, 1000, 500, 100, 50, 10, 1
+			
+	변수를 만들고 변수에 계산된 값을 입력해서 출력하세요.
+	
+	참고 ]
+		실수를 정수로 바꾸는 방법
+			parseInt(실수)
+		
+	힌트 ]
+		/ : 나누기 연산자
+		% : 나머지 연산자
+		
+		예 ]
+			512를 500으로 나눈 몫과 나머지를 구하는 방법
+			
+			(512 - (512 % 500)) / 500 ==> 1
+			
+			512 / 500 ==> 1.XXXX ==> parseInt(1.XXXX) ==> 1
+			512 % 500 ==> 12
+ */
+ 
+ /* 	
+ 	var pay = 76572;
+	var ohman = parseInt(pay / 50000);
+	pay = pay % 50000;
+	var man = parseInt(pay / 10000);
+	pay = pay % 10000;
+	var ohchu = parseInt(pay / 5000);
+	pay = pay % 5000;
+	var chun = parseInt(pay / 1000);
+	pay = pay % 1000;
+	var ohbae = parseInt(pay / 500);
+	pay = pay % 500;
+	var baek = parseInt(pay / 100);
+	pay = pay % 100;
+	var ohshi = parseInt(pay / 50);
+	pay = pay % 50;
+	var shib = parseInt(pay / 10);
+	pay = pay % 10;
+	var il = parseInt(pay / 1);
+	
+ 	
+	document.write('50000 : ' + ohman + '<br>');
+	document.write('10000 : ' + man + '<br>');
+	document.write('5000 : ' + ohchu + '<br>');
+	document.write('1000 : ' + chun + '<br>');
+	document.write('500 : ' + ohbae + '<br>');
+	document.write('100 : ' + baek + '<br>');
+	document.write('50 : ' + ohshi + '<br>');
+	document.write('10 : ' + shib + '<br>');
+	document.write('1 : ' + il + '<br>');
+	*/
+	
+	var total = 76572;
+	var calc = total;
+	
+	var oman = parseInt(calc / 50000); // 오만원권
+	calc = calc % 50000; // 오만으로 나눈 나머지...
+	var man = parseInt(calc / 10000);
+	calc = calc % 10000;
+	var ochun = parseInt(calc / 5000);
+	calc = calc % 5000;
+	var chun = parseInt(calc / 1000);
+	calc = calc % 1000;
+	var obaek = parseInt(calc / 500);
+	calc = calc % 500;
+	var baek = parseInt(calc / 100);
+	calc = calc % 100;
+	var osip = parseInt(calc / 50);
+	calc = calc % 50;
+	var sip = parseInt(calc / 10);
+	var il = calc % 10;
+	
+	// 출력
+	document.write('<h3>' + total + '원은</h3>');
+	document.write('<h3>오만원권 : ' + oman + '</h3>');
+	document.write('<h3>만원권 : ' + man + '</h3>');
+	document.write('<h3>오천원권 : ' + ochun + '</h3>');
+	document.write('<h3>천원권 : ' + chun + '</h3>');
+	document.write('<h3>오백원권 : ' + obaek + '</h3>');
+	document.write('<h3>백원권 : ' + baek + '</h3>');
+	document.write('<h3>오십원권 : ' + osip + '</h3>');
+	document.write('<h3>십원권 : ' + sip + '</h3>');
+	document.write('<h3>일원권 : ' + il + '</h3>');
+	document.write('<h3> 이 필요합니다.</h3>');
+	
+	
+	/* document.write('<h1>총금액 : ' + total + '</h1>');
+	document.write('<h2>오만원 : ' + oman + '</h2>');
+	document.write('<h2>만원 : ' + man + '</h2>');
+	document.write('<h2>오천원 : ' + ochun + '</h2>');
+	document.write('<h2>천원권 : ' + chun + '</h2>');
+	document.write('<h2>오백원 : ' + obaek + '</h2>');
+	document.write('<h2>백원 : ' + baek + '</h2>');
+	document.write('<h2>오십원 : ' + osip + '</h2>');
+	document.write('<h2>십원 : ' + sip + '</h2>');
+	document.write('<h2>일원 : ' + il + '</h2>'); */
+ 		
+</script>
+</head>
+<body>
+
+</body>
+</html>

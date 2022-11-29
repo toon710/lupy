@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>중첩된 반복문</title>
+<script type="text/javascript">
+	/* 
+		주사위 두개의 두눈의 합이 6인 경우를 모두 출력하세요.
+	*/
+
+	
+	for(var i = 1 ; i <= 6 ; i++){ // a 주사위 눈
+		for(var j = 1 ; j <= 6 ; j++){ // b 주사위 눈
+			if( i + j == 6){
+				document.write('<h3>a 주사위의 눈이 ' + i + 
+									' 이고 b 주사위의 눈이 ' + j + ' 일때 두 눈의 합이 6 입니다.')
+			}
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
