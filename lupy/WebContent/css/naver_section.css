@@ -19,7 +19,7 @@ body {
 	font-size: 13px;
 	color: #404040;
 	margin-top: 5px;
-	margin-bottom: 0px;
+	margin-bottom: 4px;
 	max-height: 42px;
 	line-height: 21px;
 	overflow: hidden;
@@ -27,6 +27,7 @@ body {
 }
 .teg1 {
 	color: #505050;
+	display: block;
 }
 .item {
 	margin-top: 18px;
@@ -37,4 +38,12 @@ body {
 	width: 170px;
 	height: 114px;
 	margin-right: 21px;
+}
+/* div {
+	border: 1px solid gray;
+} */
+table, th {
+	width: 12.5%;
+	border: 1px solid #dae1e6;
+	border-collapse : collapse;
 }
