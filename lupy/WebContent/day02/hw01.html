@@ -16,31 +16,122 @@
 	var b = prompt('정수를 입력하시오 : ');
 	var c = prompt('정수를 입력하시오 : ');
 	
-	if(a > b && a > c){
+	
+	/* //if 구문으로 처리
+	var max, mid, min;
+	if(a > b){
+		// a가 b보다 큰경우
+		if(a > c){
+			max = a;
+			// b 와 c 의 크기는 아직 비교 되지 않은 상태
+			if(b > c){
+				mid = b;
+				min = c;
+			}
+			if(b < c){
+				mid = c;
+				min = b;
+			}
+		}
+		if(a < c){
+			max = b;
+			mid = a;
+			min = b;
+		}
+	}
+	if(a < b){
+		// a 가 b 보다 작은 경우
+		if(b > c){
+			max = b;
+			// a 와 c 의 크기 비교는 안되어있는 상태, b > a ??? b
+			if(a > c){
+				mid = a;
+				min = c;
+			}
+			if(a < c){
+				mid = c;
+				min = a;
+			}
+		}
+		if(b < c){
+			// a < b < c
+			max = c;
+			mid = b;
+			min = a;
+		}
+	} */
+
+	//if else 구문으로 처리
+	if(a > b){
+		// a > b 인 경우
+		if(a > c){
+			// a > b && a > c ==> b ?? c
+			max = a;
+			
+			if(b > c){
+				mid = b;
+				min = c;
+			} else {
+				mid = c;
+				min = b;
+			}
+		} else {
+			max = c;
+			mid = a;
+			min = b;
+		}
+	} else {
+		// a < b 인 경우
+		if(b > c){
+			max = b;
+			// a ??? c --- 최대값이 b로 결정된 상황
+			if(a > c){
+				mid = a;
+				min = c;
+			} else {
+				mid = c;
+				min = a;
+			}
+		} else {
+			// a < b 그리고
+			// b < c 인 경우
+			max = c;
+			mid = b;
+			min = a;
+		}
+	}
+	
+/* 	if(a > b && a > c){
 		max = a;
 	} else if(b > c){
 		max = b;
 	} else{
 		max = c;
-	}
+	} */
+//	var max = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
 	document.write('<h3>제일 큰수는 : ' + max + ' 입니다. </h3>');
 	
-	if((a > b && a < c) || (a > c && a < b)){
+/* 	if((a > b && a < c) || (a > c && a < b)){
 		mid = a;
 	} else if((b > a && b < c) || (b > c && b < a)){
 		mid = b;
 	} else{
 		mid = c;
-	}
+	} */
+	
+/* 	var mid = (a > b) ? (b > c ? b : (a > c ? c : a)) : // a > b 인 경우 
+						(a > c ? a : (b > c ? c : b)); // b > a 인 경우 */
 	document.write('<h3>가운데수는 : ' + mid + ' 입니다. </h3>');
 	
-	if(a < b && a < c){
+	/* if(a < b && a < c){
 		min = a;
 	} else if(b < c){
 		min = b;
 	} else{
 		min = c;
-	}	
+	}	 */
+	
+//	var min = (a < b) ? (a < c ? a : c) : (b < c ? b : c);
 	document.write('<h3>제일 작은수는 : ' + min + ' 입니다. </h3>');
 	
 	

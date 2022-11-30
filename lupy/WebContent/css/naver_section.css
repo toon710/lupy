@@ -1,8 +1,40 @@
 body {
+	width: 750px;
+	height: 100%;
 	font-size: 12px;
     line-height: 16px;
+     margin: 0px auto;
 }
 .category {
 	color: #ebaa00;
 	font-weight: 700;
+	display: block;
+}
+.title {
+	font-size: 13px;
+	margin-top: 6px;
+	display: block;
+}
+.desc {
+	font-size: 13px;
+	color: #404040;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	max-height: 42px;
+	line-height: 21px;
+	overflow: hidden;
+    -webkit-line-clamp: 2;
+}
+.teg1 {
+	color: #505050;
+}
+.item {
+	margin-top: 18px;
+	width: 750px;
+	height: 114px;
+}
+.item_p {
+	width: 170px;
+	height: 114px;
+	margin-right: 21px;
 }
