@@ -91,7 +91,7 @@
 		}
 		document.write('<br>'); // 줄바꿈...
 	}
-	
+
 	for(var a = 0 ; a < 5 ; a++ ){
 		for(var b = 0 ; b < 5 ; b++ ){
 			document.write('*');
@@ -113,15 +113,16 @@
 		document.write('<br>');
 	}
 	
-	for(var c = 1 ; c > 6 ; c ++ ){		
-		for(var d = 5 ; d < 0 ; d -- ){
-			document.write(' ');
+	for(var c = 1 ; c < 6 ; c ++ ){		
+		for(var d = 5 - c ; d > 0 ; d -- ){
+			document.write('&nbsp');
 		}
-		for(var d = 0 ; d < c ; d ++ ){
+		for(var e = 0 ; e < c ; e ++ ){
 			document.write('*');
 		}
 		document.write('<br>');
 	}
+	
 </script>
 </head>
 <body>
