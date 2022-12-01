@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+	5자리 숫자를 입력받아서
+	각자리의 숫자를 기억하는 배열에 기억시키고
+	각 자리수의 합을 출력해주는 프로그램을 작성하세요.
+	
+	예 ]
+		12345
+		[1, 2, 3, 4, 5]로 만들고
+		합 : 15
+*/
+
+//	var nums = [1, 2, 3, 4, 5];
+//	alert(nums instanceof Array ? '배열입니다.' : '배열이 아닙니다.');
+
+	var str = prompt('다섯자리 정수 입력 : ');
+	var nums = []; // 한자리 숫자 다섯개 기억할 배열
+	for(var i = 0 ; i < str. length ; i ++ ){
+		// 입력받은 문자열 숫자의 길이만큼 반복
+		// 하나씩 꺼내서 숫자로 바꾸고
+		var sno = str[i];
+		var no = parseInt(sno);
+		// 배열에 채워준다.
+		nums[i] = no;
+	}
+	
+	var sum = 0; // 각자리 숫자 합 기억할 변수
+	for(var i = 0 ; i < nums.length ; i++ ){
+		sum += nums[i]; // 배열에서 하나씩 꺼내서 누적해서 더해준다.
+	}
+	
+	document.write('입력받은 숫자 : ' + str + '<br>');
+	document.write('각자리 숫자 합계 : ' + sum + '<br>');
+	/* var str = prompt('5자리 숫자 입력 : ');
+	var nums = [];
+	var sum = 0;
+	
+	function setNum(){
+		for(var i = 0 ; i < 5 ; i++){
+			tmp = num[i];
+			nums[i] = parseInt(tmp);
+		}
+	}
+	
+	function sumNum(){
+		for(var j = 0 ; j < num.length ; j ++){
+			sum = sum + nums[j];
+		}
+	}
+	setNum();
+	sumNum();
+	
+	document.write('<h1>입력한 숫자는 ' + nums + ' 이며 합계는 ' + sum + ' 입니다. </h1>'); */
+	
+/* 
+	1.
+		*****
+		*****
+		*****
+		*****
+		*****
+		*****
+	2.
+		*
+		**
+		***
+		****
+		*****
+		
+	3.
+		*****
+		****
+		***
+		**
+		*
+	4.
+		    *
+		   **
+		  ***
+		 ****
+		*****
+*/
+	for(var h = 0 ; h < 10 ; h++ ){ // 10개 행 출력
+		for(var i = 0 ; i < 10 ; i++ ){ // 한행 출력...
+			document.write('*');
+		}
+		document.write('<br>'); // 줄바꿈...
+	}
+	
+	for(var a = 0 ; a < 5 ; a++ ){
+		for(var b = 0 ; b < 5 ; b++ ){
+			document.write('*');
+		}
+		document.write('<br>');
+	}
+	
+	for(var c = 1 ; c < 6 ; c ++ ){
+		for(var d = 0 ; d < c ; d ++ ){
+			document.write('*');
+		}
+		document.write('<br>');
+	}
+	
+	for(var c = 5 ; c > 0 ; c -- ){
+		for(var d = 0 ; d < c ; d ++ ){
+			document.write('*');
+		}
+		document.write('<br>');
+	}
+	
+	for(var c = 1 ; c > 6 ; c ++ ){		
+		for(var d = 5 ; d < 0 ; d -- ){
+			document.write(' ');
+		}
+		for(var d = 0 ; d < c ; d ++ ){
+			document.write('*');
+		}
+		document.write('<br>');
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

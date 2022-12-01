@@ -28,6 +28,7 @@ body {
 .teg1 {
 	color: #505050;
 	display: block;
+	width: 100%;
 }
 .item {
 	margin-top: 18px;
@@ -46,4 +47,23 @@ table, th {
 	width: 12.5%;
 	border: 1px solid #dae1e6;
 	border-collapse : collapse;
+}
+.time {
+	color: #fff;
+	line-height: 14px;	
+}
+.runtime {
+	width: 33.5px;
+	height: 20px;
+	z-index: 1;
+	color: transparent;
+	background-color: #000;
+	padding: 3px 6px;
+    border-radius: 2px;
+    opacity: .7;
+}
+.date {
+	float: left;
+	color: grey;
+	line-height: 20px;
 }
