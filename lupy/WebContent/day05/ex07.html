@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	문제 7 ]
+		3 ~ 100 사이의 숫자를 입력받아서
+		그 숫자가 소수인지 아닌지를 판별해서 출력하세요.
+		
+		참고 ]
+			소수 : 1 과 자기 자신 이외에 나눌 수 있는 수가 없는 수
+*/
+	var num = parseInt(prompt('숫자 (3 ~ 100사이의 숫자) 입력 : '));
+	var result = '소수입니다.'
+		
+	for(var i = 2 ; i < num -1 ; i ++){
+		if(num % i == 0){
+			result = '소수가 아닙니다.'
+		} 
+	}
+	document.write('<h3> 숫자 ' + num + ' 은 ' + result + '</h3>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

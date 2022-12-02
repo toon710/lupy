@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+1.
+	*****
+	*****
+	*****
+	*****
+	*****
+	*****
+2.
+	*
+	**
+	***
+	****
+	*****
+3.
+	    *
+	   **
+	  ***
+	 ****
+	*****
+4.
+	*****
+	****
+	***
+	**
+	*
+5.
+	*****
+	 ****
+	  ***
+	   **
+	    *
+	
+6.
+	    *
+	   ***
+	  *****
+	 *******
+	*********
+	
+*/
+
+document.write('<h1>1. </h1>');
+for(var i = 0 ; i < 5 ; i++ ){
+	document.write('<pre>');
+	for(var j = 0 ; j < 5 ; j++ ){
+		document.write('*');
+	}
+	document.write('</pre>');
+}
+
+document.write('<h1>2. </h1>');
+for(var i = 0 ; i < 5 ; i++ ){
+	document.write('<pre>');
+	for(var j = 0 ; j <= i ; j++ ){
+		document.write('*');
+	}
+	document.write('</pre>');
+}
+
+document.write('<h1>3. </h1>');
+for(var i = 0 ; i < 5 ; i++ ){
+	document.write('<pre>');
+	for(var j = 0 ; j < 5 - (i + 1) ; j++ ){
+		document.write(' ');
+	}
+	for(var j = 0 ; j < i + 1 ; j++ ){
+		document.write('*');
+	}
+	document.write('</pre>');
+}
+
+document.write('<h1>3 - 1. </h1>');
+for(var i = 0 ; i < 5 ; i++ ){
+	document.write('<pre>');
+	for(var j = 0 ; j < 5 ; j++ ){
+		var star = '*';
+		if(j < 5 - (i+1)){
+			star = ' ';
+		}
+		document.write(star);
+	}
+	document.write('</pre>');
+}
+
+for(var h = 0 ; h < 10 ; h++ ){ // 10개 행 출력
+	for(var i = 0 ; i < 10 ; i++ ){ // 한행 출력...
+		document.write('*');
+	}
+	document.write('<br>'); // 줄바꿈...
+}
+
+
+// 풀이
+for(var a = 0 ; a < 5 ; a++ ){ // 1.
+	document.write('<pre>');
+	for(var b = 0 ; b < 5 ; b++ ){
+		document.write('*');
+	}
+	document.write('</pre>');
+}
+
+for(var c = 1 ; c < 6 ; c ++ ){ // 2.
+	document.write('<pre>');
+	for(var d = 0 ; d < c ; d ++ ){
+		document.write('*');
+	}
+	document.write('</pre>');
+}
+
+for(var c = 5 ; c > 0 ; c -- ){ // 4.
+	document.write('<pre>');
+	for(var d = 0 ; d < c ; d ++ ){
+		document.write('*');
+	}
+	document.write('</pre>');
+}
+
+for(var c = 1 ; c < 6 ; c ++ ){ // 3.
+	document.write('<pre>');
+	for(var d = 5 - c ; d > 0 ; d -- ){
+		document.write(' ');
+	}
+	for(var e = 0 ; e < c ; e ++ ){
+		document.write('*');
+	}
+	document.write('</pre>');
+}
+
+for(var i = 1 ; i < 6 ; i ++ ){ // 5.
+	document.write('<pre>');
+	for(var j = 1 ; j < i ; j ++ ){
+		document.write(' ');
+	}
+	for(var k = 0 ; k < 6
+	-i ; k ++ ){
+		document.write('*');
+	}
+	document.write('</pre>');
+}
+
+for(var i = 1 ; i < 6 ; i ++ ){ // 6.
+	document.write('<pre>');
+	for(var j = 5 - i ; j > 0 ; j -- ){
+		document.write(' ');
+	}
+	for(var k = 0 ; k < i  ;  k ++ ){
+		document.write('*');
+		
+	}
+	for(var l = 0 ; l < i ; l ++ ){
+		if(l != 0 ){
+		document.write('*');
+		}
+	}
+	document.write('</pre>');
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

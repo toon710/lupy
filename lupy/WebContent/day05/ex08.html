@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	문제 8 ]
+		두 사람이 등산을 한다.
+		한사람은 정상에서 1.07m/s로 내려오고
+		다른 사람은 정상으로 0.54m/s로 올라간다.
+		두사람이 만나는 시간은 몇분 몇초인지 계산해서 출력하세요.
+		
+		산의 높이는 7568m 이다.
+*/
+
+	var p1 = 1.07;
+	var p2 = 0.54;
+	var san = 7568;
+	var i = 1;
+	
+	for(;;){
+		var san1 = san - p1 * i;
+		var san2 = p2 * i;
+		if(san1 < san2 ) break;
+		
+		i++
+ 	}
+	document.write('<h3> 두사람이 만나는 시간은 ' + parseInt(i/60) + ' 분 ' + i % 60 + ' 초 입니다. </h3>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

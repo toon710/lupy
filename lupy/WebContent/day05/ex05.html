@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+/* 
+	문제 5 ]
+		2x + 4y = 20
+		의 결과를 만족하는 x, y를 찾아서 출력하세요.
+		단, x,y는 모두 0이상 10 이하인 수입니다.
+*/
+	var no1 = 0;
+	var no2 = 0;
+	for(var i = 1 ; i <= 10 ; i++ ){
+		for(var j = 1 ; j <= 10 ; j++){
+			if((2 * i + 4 * j) == 20){
+				no1 = i;
+				no2 = j;
+				document.write('<h3>만족하는 결과값은 : ' + no1 + ' 와 ' + no2 + ' 입니다.</h3>')
+			}
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
