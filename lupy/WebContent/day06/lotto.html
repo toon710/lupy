@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+</head>
+<body>
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-blue we-padding w3-card-4">이번주 로또번호</h1>
+		<div class="w3-col w3-margin-top w3-padding w3-card-4" id="content"></div>
+	</div>
+<script type="text/javascript">
+/* 
+	로또번호는 1 ~ 45 사이의 숫자 6개로 만들어진다.
+*/
+
+	var lotto = [];
+	
+	loop:
+	for(var i = 0 ; lotto.length < 6 ; i++ ){
+		// 랜덤한 번호를 만든다.
+		var no = parseInt(Math.random()*45) + 1;
+		
+		// 중복검사
+		for(var j = 0 ; j < i ; j++){
+			if(lotto[j] == no){
+				// 중복번호인 경우
+				i--;
+				continue loop;
+			}
+		}
+		
+		// 중복번호가 없으므로 배열에 채원준다.
+		lotto[i] = no;
+	}
+	
+	// 결과 출력
+	document.getElementById('content').innerHTML = lotto;
+	
+	/* 
+		정렬 알고리즘
+			1. 버블정렬
+			
+			2. 선택정렬
+			
+	*/
+	// 2. 선택 정렬 오름차순
+	for(var i = 0 ; i < lotto.length - 1 ; i++){
+		for(var j = i + 1 ; j < lotto.length ; j++){
+			if(lotto[i] > lotto[j]){
+				var tmp = lotto[i]; // 데이터 기억용 임시 변수
+				lotto[i] = lotto[j];
+				lotto[j] = tmp;
+			}
+		}
+	}
+	// 2. 선택 정렬 내림차순
+	document.getElementById('content').innerHTML = lotto;
+	
+	for(var i = 0 ; i < lotto.length - 1 ; i ++ ){
+		for(var j = i + 1 ; j < lotto.length ; j ++ ){
+			if(lotto[i] < lotto[j]){
+				var tmp = lotto[i];
+				lotto[i] = lotto[j];
+				lotto[j] = tmp;
+			}
+		}
+	}
+	
+	document.getElementById('content').innerHTML = lotto;
+	
+	// 1. 버블정렬 오름차순
+	for(var i = 0 ; i < lotto.length - 1 ; i ++ ){
+		for(var j = 0 ; j < lotto.length - 1 - i  ; j++){
+			
+			if(lotto[j] > lotto[j + 1]){
+				var tmp = lotto[j];
+				lotto[j] = lotto[j+1];
+				lotto[j+1] = tmp;
+			}
+		}
+	}
+	document.getElementById('content').innerHTML = lotto;
+</script>
+</body>
+</html>

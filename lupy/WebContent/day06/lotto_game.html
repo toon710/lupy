@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+</head>
+<body>
+	<div class="w3-content mxw650 w3-center">
+		<h1 class="w3-blue we-padding w3-card-4">이번주 로또번호</h1>
+		<div class="w3-col w3-margin-top w3-padding w3-card-4" id="content"></div>
+	</div>
+<script type="text/javascript">
+	/* 
+		로또 5게임의 번호를 생성하세요.
+		로또번호는 1 ~ 45 사이의 숫자 6개로 만들어진다.
+	*/
+	var lottoGame = [];
+	for(var l = 0 ; l < 5 ; l++){
+		var lotto = [];
+		
+		loop:
+		for(var i = 0 ; lotto.length < 6 ; i++ ){
+			// 랜덤한 번호를 만든다.
+			var no = parseInt(Math.random()*45) + 1;
+			
+			// 중복검사
+			for(var j = 0 ; j < i ; j++){
+				if(lotto[j] == no){
+					// 중복번호인 경우
+					i--;
+					continue loop;
+				}
+			}
+			
+			// 중복번호가 없으므로 배열에 채원준다.
+			lotto[i] = no;
+		}
+		for(var i = 0 ; i < lotto.length - 1 ; i++){
+			for(var j = i + 1 ; j < lotto.length ; j++){
+				if(lotto[i] > lotto[j]){
+					var tmp = lotto[i]; 
+					lotto[i] = lotto[j];
+					lotto[j] = tmp;
+				}
+			}
+		}
+		// 로또 번호가 완성이 되었으므로 배열에 기억시킨다.
+		lottoGame[l] = lotto;
+	}
+	// 결과 출력
+	document.getElementById('content').innerHTML = '';
+	for(var i = 0 ; i < lottoGame.length ; i++ ){
+		var lotto = lottoGame[i];
+		document.getElementById('content').innerHTML = 
+							document.getElementById('content').innerHTML + lotto + '<br>';
+	}
+	/* 
+			|  1 |  7 | 12 | 16 | 24 | 43 |
+			| 21 | 22 | 33 | 35 | 39 | 40 |
+			| 15 | 16 | 17 | 27 | 33 | 43 |
+			
+			
+			힌트 ]
+					숫자 < 10
+					' ' + 숫자
+	*/
+//	var arr = [ 1 ,  7 , 12 , 16 , 24 , 43];
+	var str = '';
+	for(var k = 0 ; k < lottoGame.length ; k++ ){
+		var arr = lottoGame[k];
+		str = str + '<h3>|';
+		
+		for(var i = 0 ; i < arr.length ; i++){
+			var no = arr[i];
+			var tmp = no < 10 ? ' &nbsp;' + no + ' |' : ' ' + no + ' |';
+			str = str + tmp;
+		}
+		
+//	str = str + arr.join(' | ');
+		str = str + '</h3>';
+	}
+	
+	document.getElementById('content').innerHTML = str;
+	
+	/* 
+	for(var i = 0 ; i < lottoGame.length ; i++ ){
+		var lotto1 = lottoGame[i];
+		if(lottoGame[i] < 10){
+			document.write(' ' + lotto1[i])			
+		} else {
+			document.write(lotto1[i])
+		}
+		
+	} */
+</script>
+</body>
+</html>

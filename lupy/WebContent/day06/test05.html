@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	// 1 ~ 100 까지 배열에 기억시키고
+	var nums = [];
+	for(var i = 0 ; i < 100 ; i++){
+		nums[i] = i + 1;
+	}
+	
+	document.write('<h4>nums : ' + nums + '</h4>');
+	
+	// 홀수번재 데이터를 0으로 교체
+	for(var i = 0 ; i < nums.length ; i++){
+		// 홀수번째 ===> 인덱스를 2로 나누어서 나머지가 0인 회차...
+		if(i % 2 == 0){
+			nums[i] = 0;
+		}
+	}
+	document.write('<h4>nums : ' + nums + '</h4>');
+</script>
+</head>
+<body>
+
+</body>
+</html>

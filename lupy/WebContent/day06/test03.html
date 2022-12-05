@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	var city = new Array('Seoul', 'Busan', 'Incheon');
+	
+	// 배열의 데이터를 꺼내서 출력하는 기능의 함수
+	function printArr(){
+		for(var i = 0 ; i < city.length ; i++ ){
+			document.write((i + 1) + ' 번째 도시 : ' + city[i] + '<br>');
+		}
+	}
+	
+	city[3] = 'Bupyung'; // 호출전 수정이 이루어져 원소가 바뀐후 출력
+	
+	// 함수 호출
+	printArr();
+</script>
+</head>
+<body>
+
+</body>
+</html>

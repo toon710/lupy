@@ -8,17 +8,46 @@
 <script type="text/javascript">
 /* 
 	과제 ]
-		1. 4자리 숫자 abcd는 0이 포함되지 않는다.
-		2. 첫째 숫자(a)가 마지막숫자(d)보다 2가 크다.
-		3. 둘째 숫자(b)가 셋째숫자(c)보다 크다.
-		4. 역순의 숫자와 숫자의 합은 16456이 된다.
+		1. 4자리 숫자 abcd는 0이 포함되지 않는다. // (1 ~ 9)
+		2. 첫째 숫자(a)가 마지막숫자(d)보다 2가 크다. // a = d + 2
+		3. 둘째 숫자(b)가 셋째숫자(c)보다 크다. // b < c
+		4. 역순의 숫자와 숫자의 합은 16456이 된다. // ( abcd + dcba ==> 16456 )
 		
 		숫자를 찾아주세요.
 		
 		//if문 반복문
 */
 
-	var a = 0;
+	for(var i = 1 ; i < 8 ; i++ ){ // d ( 1 ~ 7 )
+		var d = i;
+		var a = d + 2;
+		for(var j = 2; j < 10 ; j ++ ){ // b
+			// j - 두번째 숫자
+			if(j == i && j == i + 2){
+				continue;
+			}
+			var b = j;
+			for(var k = 1 ; k < j ; k++ ){ // c
+				if(k == i || k == i + 2 ){
+					continue;
+				}
+				var c = k;
+				
+				var no = a * 1000 + b * 100 + c * 10 + d;
+				var no1 = d * 1000 + c * 100 + b * 10 + a;
+				
+				if( no + no1 == 16456 ){
+					document.write('a: ' + a + '<br>');
+					document.write('b: ' + b + '<br>');
+					document.write('c: ' + c + '<br>');
+					document.write('d: ' + d + '<br>');
+					document.write('이고 찾는 숫자는 ' + no + '입니다.');
+				}
+			}
+		}
+	}
+
+/* 	var a = 0;
 	var b = 0;
 	var c = 0;
 	var d = 0;
@@ -48,7 +77,7 @@
 	}
 	num = a * 1000 + b * 100 + c * 10 + d;
 	document.write('결과값 : ' + num);
-	
+	 */
 </script>
 </head>
 <body>

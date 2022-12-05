@@ -15,8 +15,19 @@
 		
 		산의 높이는 7568m 이다.
 */
-
-	var p1 = 1.07;
+	var sec = 1;
+	while(true){
+		
+		if(sec * 0.54 >= (7568 - (1.07 * sec))){
+			break;
+		}
+		sec++;
+	}
+	
+	document.write('<h3 class="w3-padding w3-green w3-center">등산을 하는 두 사람은 ' + 
+			parseInt(sec / 60 / 60 )+ ' 시간 ' + parseInt(sec / 60 % 60) + ' 분 ' + (sec % 60) + ' 초 후 만나게 됩니다. </h3>');
+//풀이
+	/* var p1 = 1.07;
 	var p2 = 0.54;
 	var san = 7568;
 	var i = 1;
@@ -28,7 +39,7 @@
 		
 		i++
  	}
-	document.write('<h3> 두사람이 만나는 시간은 ' + parseInt(i/60) + ' 분 ' + i % 60 + ' 초 입니다. </h3>');
+	document.write('<h3> 두사람이 만나는 시간은 ' + parseInt(i/60) + ' 분 ' + i % 60 + ' 초 입니다. </h3>'); */
 </script>
 </head>
 <body>
