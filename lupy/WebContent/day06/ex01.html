@@ -6,6 +6,12 @@
 <link rel="stylesheet" type="text/css" href="../css/w3.css">
 <link rel="stylesheet" type="text/css" href="../css/chopa.css">
 <script type="text/javascript" src="../js/w3color.js"></script>
+<style type="text/css">
+	.score > :nth-last-child(1), .score > :nth-last-child(2){
+		font-weight: bold;
+		color: #f44336;
+	}
+</style>
 <script type="text/javascript">
 /* 
 	문제 1 ]
@@ -19,32 +25,82 @@
 		3. 총점까지 기억하는 배열을 만들고 총점이 높은 학생부터 정렬해서
 			결과를 출력하세요.
 */
+	var student = ['chopa', 'lupy', 'zoro', 'nami', 'sanji'];
+	var subj = ['자바', '오라클', '웹', '총점'];
 	var score = []; // 다섯학생의 점수 기억할 배열
+	var stud = [];
 
 	for(var i = 0 ; i < 5 ; i++){
 		// 한 학생의 각 과목 점수
-		var stud = []; // 한학생의 점수를 기억할 배열
+		score[i] = []; // 한학생의 점수를 기억할 배열
 		for(var j = 0; j < 3 ; j++ ){
 			var no = parseInt(Math.random()* (100 - 60 + 1)) + 60;
-			stud[j] = no;
+			score[i][j] = no;
 		}
 		// 한 학생의 점수가 완성이 됐으므로
-		score[i] = stud;
+//		score[i] = stud;
 	}
 	
+	for(i = 0 ; i < score.length ; i++ ){
+		stud[i] = [];
+		stud[i][3] = 0;
+		for(j = 0 ; j < score[i].length ; j++ ){
+			stud[i][j] = score[i][j];
+			stud[i][3] += score[i][j]; // 총합을 4번째 넣어준다
+		}
+	}
+	
+	
+	// 총점 기준 내림차순 정렬
+	/* for(var i = 0 ; i < stud.length -1 ; i++ ){
+		for(var j = i + 1 ; j < stud.length ; j++ ){
+			if(stud[i][3] < stud[j][3]){
+				var tmp = stud[i];
+				stud[i] = stud[j];
+				stud[j] = tmp;
+			}
+		}
+	} */
+	
+	stud.sort(function(a, b){
+		return b[3] - a[3];
+	});
+	
+	document.write('<div class="w3-content mxw550">');
+	document.write('<h1 class="w3-red w3-padding w3-center w3-card-4">글로벌 아이티 학생별 평가 점수</h1>');
 	for(var i = 0 ; i < score.length ; i++ ){
-		document.write('<h3 class="' + colorList[i] + ' w3-padding w3-center">' + score[i] + '</h3>'); 
+		document.write('<div class="w3-col w3-padding w3-card-4">')
+		document.write('<h3 class="w3-col ' + colorList[i] + ' w3-padding w3-center" style="margin-top: 0px!important;">' + student[i] + '</h3>'); 
+		document.write('<div class="w3-col w3-padding mgl10 score">');
+		for(var j = 0 ; j < stud[i].length ; j++ ){
+			document.write('<h5 class="w3-col m5 w3-right-align">' + subj[j] + ' : ' + '</h5>');
+			document.write('<h5 class="w3-col m6 mgl10">' + stud[i][j] + '</h5>');
+		}
+		document.write('</div>');
+		document.write('</div>');
 	}
+	document.write('</div>');
 	
-	var sum;
+	
+	
+	
+	/* var sum;
 	for(var i = 0 ; i < 5 ; i ++ ){
+		sum = 0;
 		for(var j = 0 ; j < 3 ; j ++){
 			sum = sum + score[i][j];
 		}
 		score[i][3] = sum;
-		document.write(score[i][3] +'<br>');
-	}
+		document.write('<h3 class="' + colorList[i] + ' w3-padding w3-center">' + score[i][3] + '</h3>');
+	} */
 	
+	/* var total = [];
+	for(var i = 0 ; i < score.length ; i++ ){
+		for(var j = 0 ; j < 3 ; j++){
+			var tmp = score[i][]
+		}
+	}
+	 */
 	
 	
 // 풀이

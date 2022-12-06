@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	var kdata = ['서울', '인천'];
+	document.write('<h3 class="w3-center">kdata : ' + kdata + '</h3>');
+	var p1 = kdata.unshift('과천', '안산'); // 처음위치에 데이터를 추가하고 변경된 배열의 길이를 반환해주는 함수
+	document.write('<h3 class="w3-center">p1 : ' + p1 + '</h3>');
+	document.write('<h3 class="w3-center">kdata : ' + kdata + '</h3>');
+	var p2 = kdata.shift(); // 처음 위치의 데이터를 삭제하고 데이터를 반환
+	document.write('<h3 class="w3-center">p2 : ' + p2 + '</h3>');
+	document.write('<h3 class="w3-center">kdata : ' + kdata + '</h3>');
+</script>
+</head>
+<body>
+
+</body>
+</html>
