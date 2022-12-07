@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	/* 
+		param 데이터를 분리해서
+		연관배열을 만드세요
+		
+		출력해주세요.
+		
+		예 ]
+			id : chopa
+			pw : 12345
+			mail : chopa@githrd.com
+			job : doctor
+		
+		참고 함수 ]
+			substring(시작인덱스, 끝인덱스)
+			==> 문자열의 시작인덱스에서 부터 끝인덱스이전까지 잘라서 반환해주는 함수
+			
+			substring(시작인덱스)
+			==> 문자열의 시작인덱스에서부터 마지막까지 잘라서 반환해주는 함수
+	*/
+	var param = '?id=chopa&pw=12345&mail=chopa@githrd.com&job=doctor';
+	
+	var paramData = {};
+	
+	var data = param.substring(1);
+	var arr = [];
+	
+	var tmp = data;
+	for(var i = 0 ; ; i++ ){
+		var idx = tmp.indexOf('&')
+		if(idx == -1){
+			arr[i] = tmp;
+			break;
+		}
+		var str = tmp.substring(0, idx);		
+		arr[i] = str;
+		tmp = tmp.substring(idx + 1);
+	}
+//	['id=chopa', 'pw=12345', 'mail=chopa@githrd.com', 'job=doctor']
+	document.write(arr);
+	
+	var keys = [];
+	
+	for(var i = 0; i < arr.length ; i++ ){
+		//1st
+		var str = arr[i]; // id=chopa
+		// = 의 인덱스 추출
+		var idx = str.indexOf('=');
+		
+		var key = str.substring(0, idx);
+		var value = str.substring(idx + 1);
+		
+		keys.push(key); // 키값 배열에 키값 추가
+		paramData[key] = value; // 연관배열에 데이터 추가
+	}
+/* 
+	//2nd
+	var str = arr[1]; // id=chopa
+	// = 의 인덱스 추출
+	var idx = str.indexOf('=');
+	
+	var key = str.substring(0, idx);
+	var value = str.substring(idx + 1);
+	
+	keys.push(key); // 키값 배열에 키값 추가
+	paramData[key] = value; // 연관배열에 데이터 추가
+	
+	//3rd
+	var str = arr[2]; // id=chopa
+	// = 의 인덱스 추출
+	var idx = str.indexOf('=');
+	
+	var key = str.substring(0, idx);
+	var value = str.substring(idx + 1);
+	
+	keys.push(key); // 키값 배열에 키값 추가
+	paramData[key] = value; // 연관배열에 데이터 추가
+ */
+
+	// 출력
+	for(var i = 0 ; i < keys.length ; i++ ){
+		document.write('<h3 class="w3-center">' + keys[i] + ' : ' + paramData[keys[i]] + '</h3>');
+	}
+	
+/* 	
+	var tmp2 = arr;
+	for(var i = 0; i < arr.length ; i++ ){
+		var idx2 = tmp2[i].indexOf('=');
+		var keys = tmp2[i].substring(0, idx2);
+		var data1 = tmp2[i].substring(idx2 + 1);
+		paramData[key] = data1; 
+	}	
+	document.write(paramData.id);
+ */	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

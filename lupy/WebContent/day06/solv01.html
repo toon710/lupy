@@ -220,7 +220,11 @@
 			document.write('<h3 class="w3-col ' + colorList[i] + ' w3-center">' + subj[i] + '</h3>');
 			document.write('<div class="w3-col">')
 			for(var j = 0 ; j < arr[i].length ; j++){
-				document.write(student[j] + ' : ' + arr[i][j] + '<br>');
+				document.write('<div class="w3-col w3-padding">')
+				document.write('<h4 class="w3-col m4 w3-right-align">' + student[j] + ' : </h4>');
+				document.write('<h4 class="w3-col m6 w3-center">' + arr[i][j] + '</h4>');
+				document.write('</div>');
+				
 			}			
 			document.write('</div>');
 			document.write('</div>');
