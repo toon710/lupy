@@ -31,7 +31,7 @@
 	
 	var data = param.substring(1);
 	var arr = [];
-	
+/* 	
 	var tmp = data;
 	for(var i = 0 ; ; i++ ){
 		var idx = tmp.indexOf('&')
@@ -43,11 +43,24 @@
 		arr[i] = str;
 		tmp = tmp.substring(idx + 1);
 	}
+ */	
+	arr = data.split('&');
 //	['id=chopa', 'pw=12345', 'mail=chopa@githrd.com', 'job=doctor']
 	document.write(arr);
 	
 	var keys = [];
 	
+	var tmp = [];
+	
+	for(var i = 0 ; i < arr.length ; i ++ ){
+		tmp[i] = arr[i].split('=');
+		var key = tmp[i][0];
+		var value = tmp[i][1];
+		
+		keys.push(key);
+		paramData[key] = value;
+	}
+/* 	
 	for(var i = 0; i < arr.length ; i++ ){
 		//1st
 		var str = arr[i]; // id=chopa
@@ -60,6 +73,7 @@
 		keys.push(key); // 키값 배열에 키값 추가
 		paramData[key] = value; // 연관배열에 데이터 추가
 	}
+ */
 /* 
 	//2nd
 	var str = arr[1]; // id=chopa
