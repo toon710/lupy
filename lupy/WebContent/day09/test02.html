@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript">
+	document.write('<p>문서의 URL주소 : ' + location.href + '</p>');
+	document.write('<p>호스트 이름과 포드 : ' + location.host + '</p>');
+	document.write('<p>호스트 컴퓨터 이름 : ' + location.hostname + '</p>');
+	document.write('<p>앵커이름 : ' + location.hash + '</p>');
+	document.write('<p>디렉토리 이하 경로 : ' + location.pathname + '</p>');
+	document.write('<p>포트번호 부분 : ' + location.port + '</p>');
+	document.write('<p>프로토콜 종류 : ' + location.protocol + '</p>');
+	document.write('<p>파라미터 : ' + location.search + '</p>');
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600 w3-center">
+		<a href="test02.html?a=1&b=2#top">이 링크로 다시 실행하세요.</a>
+		<div class="w3-col w3-margin-top w3-center" id="btnfr">
+			<div class="w3-half w3-blue w3-hover-aqua w3-button" id="gbtn" onclick="func01(this)">google</div>
+			<div class="w3-half w3-green w3-hover-lime w3-button" id="wbtn" onclick="func01(this)">w3schoos</div>
+		</div>
+	</div>
+<script type="text/javascript">
+/* 
+	document.getElementById('gbtn').onclick = function (){
+		location.href = 'https://www.google.com';
+	};
+	document.getElementById('wbtn').onclick = function (){
+		location.href = 'https://www.w3schools.com';
+	};
+ */	
+	/* 
+		문제 ]
+ 			버튼태그에 클릭 이벤트를 추가하는데 하나의 함수를 이용해서 두개의 버튼에 대한 이벤트를 모두 처리하세요.
+	*/
+
+	function func01(el){
+		var txt = el.getAttribute('id');	// getAttribute 속성값 읽어주는 함수
+		var url = '';
+		switch(txt){
+		case 'gbtn':
+			url = 'https://www.google.com';
+			break;
+		case 'wbtn':
+			url = 'https://www.w3schools.com';
+			break;
+		}
+		
+		location.href = url;
+	}
+	/* 
+		페이지가 열릴때 파라미터가 존재하면 
+		파라미터의 키값과 데이터를 분리해서
+		화면에 출력하세요.
+	*/
+	
+	var param = location.search; // 파라미터 변수에 기억
+	var data = {};
+	if(param){
+		param = param.substring(1); // ? 제거
+		
+		var arr = param.split('&'); // ==> & 기준 배열로 전환
+		
+		for(var i = 0 ; i < arr.length ; i++ ){
+			// 배열 길이만큼 반복
+			var tmp = arr[i].split('=');
+			
+			data[tmp[0]] = tmp[1];
+		}
+	}
+	
+	var keys = Object.keys(data); // 배열에서 키값 꺼내는 함수
+	
+	
+	for(var i = 0 ; i < keys.length ; i++ ){
+		document.write('<h2 class="w3-col w3-center w3-border">' + keys[i] + ' - ' + data[keys[i]]);
+	}
+	
+	
+	
+</script>
+</body>
+</html>

@@ -72,3 +72,9 @@
 .w160 {
 	width: 160px;
 }
+/* 라벨 */
+.label1 {
+	font-size: 14pt;
+	font-weight: bold;
+	line-weight: 230%;
+}
