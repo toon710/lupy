@@ -78,3 +78,8 @@
 	font-weight: bold;
 	line-weight: 230%;
 }
+/* 박스 */
+.box100 {
+	width: 100px;
+	height: 100px;
+}
