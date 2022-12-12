@@ -83,3 +83,12 @@
 	width: 100px;
 	height: 100px;
 }
+.imgbox {
+	width: 78px;
+	height: 78px;
+	overflow: hidden;
+}
+.img1 {
+	width: 78px;
+	height: auto;
+}
