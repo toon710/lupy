@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var param = $(location).attr('search');
+		param = param.substring(1);
+		
+		var myfood = {};
+		var myf = param.split('&');
+		for(var i = 0 ; i < myf.length ; i++ ){
+			console.log(myf[i]);
+			var tmp = myf[i].split('=');
+			myfood[tmp[0]] = tmp[1];
+		}
+		var imagename = myfood['imgname'];
+		$('#foodImg').attr('src', '../img/w3images/' + imagename);
+		
+		var h3 = document.createElement('h3');
+		$(h3).attr('id', 'title');
+		$('.w3-col').append(h3);
+		var ti = myfood['title'].split('+');
+		var ti2 = ti.join(' ');
+			// replace(/[+]/g, ' ')
+		ti2 = ti2.replace('%2C', ', ');
+		$('#title').html(ti2);
+		
+		var p = document.createElement('p');
+		$(p).attr('id', 'expl');
+		$('.w3-col').append(p);
+		var ex = myfood['expl'].split('+');
+		var ex2 = ex.join(' ');
+			// replace(/[+]/g, ' ')
+		ex2 = ex2.replace('%2C', ', ');
+//		alert(ex2);
+		$('#expl').html(ex2);
+		
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw700 w3-center">
+		<h1 class="w3-green w3-padding w3-card-4">선택 이미지</h1>
+		<div class="w3-col w3-center w3-margin-top">
+			<div class="inblock w3-card-4 w3-border" style="width: 450px; height: 675px; padding: 10px; overflow: hidden;">
+			<img src="" id="foodImg" width="100%" height="auto">
+		</div>
+	</div>
+</body>
+</html>
