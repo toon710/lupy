@@ -13,7 +13,8 @@
 	$(document).ready(function(){
 		var param = $(location).attr('search');
 		param = param.substring(1);
-		
+		param = decodeURI(decodeURIComponent(param));
+//		alert(param);
 		var myfood = {};
 		var myf = param.split('&');
 		for(var i = 0 ; i < myf.length ; i++ ){
@@ -24,24 +25,36 @@
 		var imagename = myfood['imgname'];
 		$('#foodImg').attr('src', '../img/w3images/' + imagename);
 		
-		var h3 = document.createElement('h3');
+		$('.inblock').eq(0).append('<h3 id="title" style="w3-col w3-margin-top w3-center">' + myfood['title'] + '</h3>');
+		$('.inblock').eq(0).append('<p id="expl" style="w3-center">' + myfood['expl'] + '</p>');
+		$('.inblock').css('height', 'auto');
+/*		var h3 = document.createElement('h3');
 		$(h3).attr('id', 'title');
-		$('.w3-col').append(h3);
-		var ti = myfood['title'].split('+');
-		var ti2 = ti.join(' ');
+		$('.inblock').append(h3);
+// 		var ti = myfood['title'].split('+');
+//		var ti2 = ti.join(' ');
 			// replace(/[+]/g, ' ')
-		ti2 = ti2.replace('%2C', ', ');
-		$('#title').html(ti2);
+//		ti2 = ti2.replace('%2C', ', '); 
+		$('#title').html(myfood['title']);
 		
 		var p = document.createElement('p');
 		$(p).attr('id', 'expl');
-		$('.w3-col').append(p);
-		var ex = myfood['expl'].split('+');
-		var ex2 = ex.join(' ');
+		$('.inblock').append(p);
+/// 		var ex = myfood['expl'].split('+');
+//		var ex2 = ex.join(' ');
 			// replace(/[+]/g, ' ')
-		ex2 = ex2.replace('%2C', ', ');
-//		alert(ex2);
-		$('#expl').html(ex2);
+//		ex2 = ex2.replace('%2C', ', ');
+//		alert(ex2); 
+		$('#expl').html(myfood['expl']);
+		$('.inblock').css('height', 'auto'); */
+		
+		/*
+		var p2 = document.createElement('p');
+		$(p2).attr('id', 'expl2');
+		$('.w3-col').append(p2);
+		$('#expl2').html(myfood['expl2']);
+		 */
+		
 		
 	});
 </script>
@@ -51,7 +64,8 @@
 		<h1 class="w3-green w3-padding w3-card-4">선택 이미지</h1>
 		<div class="w3-col w3-center w3-margin-top">
 			<div class="inblock w3-card-4 w3-border" style="width: 450px; height: 675px; padding: 10px; overflow: hidden;">
-			<img src="" id="foodImg" width="100%" height="auto">
+				<img src="" id="foodImg" width="100%" height="auto">
+			</div>
 		</div>
 	</div>
 </body>
