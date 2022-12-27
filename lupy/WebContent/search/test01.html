@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	var arr = []; // 배열변수 생성
+	
+	
+	for(var i = 0 ; i < 100 ; i ++){
+		arr[i] = i + 1;
+	}
+	
+	var num = parseInt(Math.random() + 100) + 1;
+	
+	// 순차탐색
+	for(var i = 0 ; i < arr.length ; i ++ ){
+		if(num == arr[i]){
+			document.write('순차탐색 : ' + (i + 1) + ' 번째 만에' + num + ' 찾기 성공!<br>');
+			break;
+		}
+	}
+	
+	// 이진탐색
+	var start = 0 ;
+	var end = arr.length -1;
+	for(var i = 0 ; start <= end ; i++ ){
+		var mid = parseInt((start + end)/ 2);
+		if(arr[mid] == num){
+			// mid 번째 데이터와 num이 같으면
+			document.write('이진탐색 : ' + (i + 1) + ' 번째 만에' + num + ' 찾기 성공!');
+			break;
+		} else if(arr[mid] > num){
+			end = mid - 1;
+		} else if(arr[mid] < num){
+			start = mid + 1;
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

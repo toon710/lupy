@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" type="text/css" href="../css/w3.css">
+<link rel="stylesheet" type="text/css" href="../css/chopa.css">
+<script type="text/javascript" src="../js/jquery-3.6.1.min.js"></script>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+/*
+	비동기 통신
+	==> 웹서비스의 원칙은
+		클라이언트가 요청하면
+		서버는 클라이언트가 요청한 문서를 응답(전송)해준다.
+		그리고 그 직후
+		서버는 클라이언트와의 연결을 끊는다.
+		따라서 이런 통신방식을 단절형 통신이라 말한다.
+		
+		그리고 서버에서 전달된 문서는
+		원칙은 클라이언트가 전송받은 문서와 동일해야 한다.
+		(클라이언트가 현재 보고 있는 문서와 동일해야 한다.)
+		이런 경우를 동기형 이라고 이야기한다.
+		
+		반대로
+		서버가 전달해준 문서와
+		클라이언트가 보고있는 문서가 다른 경우
+		(또는 클라이언트가 받은 문서를 일부분만 교체한 경우)
+		비동기 라고 이야기 한다.
+		
+		그런데 이 비동기 통신 처리는 jQuery에서 함수로 정의 되어있다.
+		
+			형식 ] 
+				
+				$.ajax({
+					url: '서버에 전달할 주소',
+					type: '파라미터 전송방식(GET || POST)',
+					dataType: 'html || text || xml || json',
+					data: {
+						키값: 테이터
+					},
+					success: function(data){
+						// 정상적으로 통신에 성공하고 문서를 전송받은 경우
+						// 이때 문서의 내용은 data 변수에 기억된다.
+						// json으로 전송받은 경우
+						//		var data = {"키값1": "데이터1", "키값2": "데이터2" };
+						// 따라서 사용할 때는 data.키값 1 또는 data['키값1']로 꺼내서 사용할 수 있다.
+					},
+					error: function(){
+						-- 통신에 실패한 경우 처리될 함수
+					}
+				});
+ */
+
+	$(document).ready(function(){
+		// #idck 클릭이벤트
+		$('#idck').click(function(){
+			// 할일
+			// 데이터 읽고
+			var sid = $('#id').val();
+			// 유효성검사하고
+			if(!sid){
+				$('#id').focus();
+				return;
+			}
+			// 요청하고
+			// 이때 요청은 비동기 통신으로 요청해야 한다.
+			$.ajax({
+				url: 'http://192.168.219.10/member/idCheck.chp',
+				type: 'post',
+				dataType: 'json', // 서버가 응답해줄 문서의 형식
+				data: {
+					id: sid
+				},
+				success: function(data){
+					// 결과받고 처리하고
+					if(data.result == 'OK'){
+						// 아이디를 사용할 수 있는 경우
+						$('#idMsg').css('color', 'green').css('text-align', 'center').html('* 사용가능한 아이디입니다. *');
+						
+					} else {
+						$('#idMsg').css('color', 'red').css('text-align', 'center').html('# 사용불가능한 아이디입니다 #');
+						
+					}
+					$('#idMsg').css('display', 'block');
+				},
+				error: function(){
+					alert('### 통신 오류 ###')
+				}
+			});
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="w3-content mxw600">
+		<h1 class="w3-pink w3-padding w3-card-4 w3-margin-bottom">Ajax Test</h1>
+		
+		<div class="w3-col">
+			<input type="text" name="id" id="id" class="w3-col m8 w3-input w3-border">
+			<div class="w3-col m4 w3-button w3-blue" id="idck">idCheck</div>
+			<p style="display: none; text-align: center;" id="idMsg"></p>
+ 		</div>
+	</div>
+</body>
+</html>
